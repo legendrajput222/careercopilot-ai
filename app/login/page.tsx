@@ -1,7 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { signIn } from "next-auth/react";
+const { data: session } = useSession();
+const router = useRouter();
+
+useEffect(() => {
+  if (session) {
+    router.push("/dashboard");
+  }
+}, [session, router]);
 
 export default function LoginPage() {
   return (
@@ -33,11 +39,15 @@ export default function LoginPage() {
         </button>
 
         <button
-          onClick={() => signIn("google")}
-          className="w-full mt-3 border border-zinc-700 p-3 rounded-lg text-white transition-all duration-300 hover:bg-zinc-800 hover:scale-105 active:scale-95"
-        >
-          Continue with Google
-        </button>
+  onClick={() =>
+    signIn("google", {
+      callbackUrl: "/dashboard",
+    })
+  }
+  className="w-full mt-3 border border-zinc-700 p-3 rounded-lg text-white transition-all duration-300 hover:bg-zinc-800 hover:scale-105 active:scale-95"
+>
+  Continue with Google
+</button>
 
         <div className="text-center mt-5">
           <span className="text-zinc-400">

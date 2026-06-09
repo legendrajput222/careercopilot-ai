@@ -6,9 +6,10 @@ import { useSession, signOut } from "next-auth/react";
 export default function DashboardPage() {
   const { data: session } = useSession();
   
-  return ( <div className="min-h-screen bg-[#030712] text-white flex">
-  
-  ```
+  return 
+    ( <div className="min-h-screen bg-[#030712] text-white flex">
+
+    
     {/* Sidebar */}
     <div className="w-72 bg-zinc-900 p-6">
       <h1 className="text-3xl font-bold mb-10">
