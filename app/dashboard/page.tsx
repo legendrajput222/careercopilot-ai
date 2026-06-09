@@ -6,10 +6,10 @@ import { useSession, signOut } from "next-auth/react";
 export default function DashboardPage() {
 const { data: session } = useSession();
 
-return (
+return
   <div className="min-h-screen bg-[#030712] text-white flex">
 
-```
+
   {/* Sidebar */}
   <div className="w-72 bg-zinc-900 p-6">
     <h1 className="text-3xl font-bold mb-10">
@@ -65,11 +65,9 @@ return (
         <h1 className="text-5xl font-bold">
           Dashboard
         </h1>
-        <pre>
-  {JSON.stringify(session, null, 2)}
-</pre>
+
         <p className="text-zinc-400 mt-2 text-lg">
-          Welcome back, {session?.user?.name}
+          Welcome back, {session?.user?.name || "User"}
         </p>
       </div>
 
@@ -83,16 +81,16 @@ return (
           />
         )}
 
-<button
-  onClick={() =>
-    signOut({
-      callbackUrl: `${window.location.origin}/login`,
-    })
-  }
-  className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
->
-  Logout
-</button>
+        <button
+          onClick={() =>
+            signOut({
+              callbackUrl: "/login",
+            })
+          }
+          className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
+        >
+          Logout
+        </button>
 
       </div>
 
@@ -159,6 +157,8 @@ return (
 
   </div>
 
-  </div>
-  );
+</div>
+```
+
+);
 }
