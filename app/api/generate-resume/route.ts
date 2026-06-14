@@ -74,17 +74,19 @@ return NextResponse.json({
   resume: text,
 });
 
-} catch (error: any) {
-console.error("GEMINI ERROR:", error);
+} catch (error: unknown) {
+  console.error("GEMINI ERROR:", error);
 
-return NextResponse.json(
-  {
-    error: error?.message || "Failed to generate resume",
-  },
-  {
-    status: 500,
-  }
-);
-
+  return NextResponse.json(
+    {
+      error:
+        error instanceof Error
+          ? error.message
+          : "Failed to generate resume",
+    },
+    {
+      status: 500,
+    }
+  );
 }
 }
