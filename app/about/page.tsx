@@ -20,9 +20,9 @@ export default function AboutPage() {
             </p>
   
             <p>
-              Whether you're a student, fresh graduate, or experienced
+            Whether you&apos;re a student, fresh graduate, or experienced
               professional, CareerCopilot AI provides practical tools
-              to help you stand out in today's competitive job market.
+              to help you stand out in today&apos;s competitive job market.
             </p>
   
             <p>
