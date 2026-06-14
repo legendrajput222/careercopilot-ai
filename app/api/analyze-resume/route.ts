@@ -44,7 +44,9 @@ ${resume}
 Return clean readable text only.
 `;
 
-let result;
+let result:
+  | Awaited<ReturnType<typeof model.generateContent>>
+  | undefined;
 
 for (let i = 0; i < 3; i++) {
   try {
@@ -63,7 +65,11 @@ for (let i = 0; i < 3; i++) {
   }
 }
 
-    const response = result.response.text();
+if (!result) {
+  throw new Error("Failed to generate analysis");
+}
+
+const response = result.response.text();
 
     return NextResponse.json({
       analysis: response,
