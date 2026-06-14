@@ -18,6 +18,12 @@ const handler = NextAuth({
   },
 
   secret: process.env.NEXTAUTH_SECRET,
+
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      return `${baseUrl}/dashboard`;
+    },
+  },
 });
 
 export { handler as GET, handler as POST };
