@@ -9,46 +9,55 @@ const plans = [
     name: "Free",
     price: "$0",
     period: "forever",
-    description: "Perfect for getting started with AI-powered career tools.",
+    description:
+      "Perfect for students, fresh graduates, and job seekers getting started.",
     features: [
-      "1 resume per month",
-      "Basic ATS score check",
-      "3 cover letter generations",
-      "Community support",
+      "Resume Builder",
+      "ATS Checker (3 checks/day)",
+      "AI Resume Analyzer (3 analyses/day)",
+      "Basic Cover Letter Generator",
+      "Career Roadmap Access",
+      "Interview Prep Questions",
     ],
-    cta: "Get Started",
+    cta: "Get Started Free",
     highlighted: false,
   },
+
   {
     name: "Pro",
-    price: "$19",
+    price: "$9",
     period: "/month",
-    description: "Everything you need to land your next role fast.",
+    description:
+      "For serious job seekers who want unlimited AI-powered career tools.",
     features: [
-      "Unlimited resumes & cover letters",
-      "Advanced ATS optimization",
-      "AI interview prep sessions",
-      "Career roadmap generator",
-      "Job match analysis",
-      "Priority email support",
+      "Everything in Free",
+      "Unlimited ATS Checks",
+      "Unlimited AI Resume Analysis",
+      "Unlimited Cover Letters",
+      "Advanced Resume Suggestions",
+      "Priority AI Processing",
+      "Premium Resume Templates",
     ],
-    cta: "Start Free Trial",
+    cta: "Coming Soon",
     highlighted: true,
   },
+
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "For teams, universities, and career services organizations.",
+    name: "Premium",
+    price: "$19",
+    period: "/month",
+    description:
+      "Advanced career growth toolkit for professionals and power users.",
     features: [
       "Everything in Pro",
-      "Team dashboard & analytics",
-      "Custom branding",
-      "Dedicated account manager",
-      "SSO & API access",
-      "SLA & priority support",
+      "Personalized Career Roadmap",
+      "Advanced Interview Coaching",
+      "AI Job Match Recommendations",
+      "Premium Templates",
+      "Early Access Features",
+      "Priority Support",
     ],
-    cta: "Contact Sales",
+    cta: "Coming Soon",
     highlighted: false,
   },
 ];
@@ -109,7 +118,7 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href="#cta"
+                  href={plan.name === "Free" ? "/signup" : "#"}
                   className={`block rounded-xl py-3 text-center text-sm font-semibold transition-all ${
                     plan.highlighted
                       ? "bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/25 hover:brightness-110"
