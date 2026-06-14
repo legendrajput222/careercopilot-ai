@@ -8,15 +8,13 @@ const footerLinks = {
     { label: "FAQ", href: "#faq" },
   ],
   Company: [
-    { label: "About", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
 
@@ -39,17 +37,27 @@ export function Footer() {
               interviews, and land your dream job faster.
             </p>
             <div className="mt-6 flex items-center gap-4">
-              {[Globe, Share2, Mail].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-500 transition-colors hover:border-white/20 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
+  <a
+    href="/contact"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-500 hover:text-white"
+  >
+    <Globe className="h-4 w-4" />
+  </a>
+
+  <a
+    href="/contact"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-500 hover:text-white"
+  >
+    <Share2 className="h-4 w-4" />
+  </a>
+
+  <a
+    href="mailto:legendrana323@email.com"
+    className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-500 hover:text-white"
+  >
+    <Mail className="h-4 w-4" />
+  </a>
+</div>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
@@ -79,7 +87,7 @@ export function Footer() {
             reserved.
           </p>
           <p className="text-sm text-zinc-600">
-            Built with AI, for your career.
+          AI-powered Resume Builder, ATS Checker & Career Assistant.
           </p>
         </div>
       </div>
