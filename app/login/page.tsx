@@ -9,13 +9,12 @@ export default function LoginPage() {
   const { data: session } = useSession();
   const router = useRouter();
 
-useEffect(() => {
-  if (session) {
-    router.push("/dashboard");
-  }
-}, [session, router]);
+  useEffect(() => {
+    if (session) {
+      router.push("/dashboard");
+    }
+  }, [session, router]);
 
-  if (status === "loading") 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black px-6">
       <div className="w-full max-w-md bg-zinc-900 p-8 rounded-2xl border border-zinc-800 shadow-xl">
