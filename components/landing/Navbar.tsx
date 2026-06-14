@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, Sparkles, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -52,18 +53,18 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="#pricing"
-            className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:text-white"
-          >
-            Sign in
-          </a>
-          <a
-            href="#cta"
-            className="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-all hover:shadow-violet-500/40 hover:brightness-110"
-          >
-            Get Started Free
-          </a>
+        <Link
+  href="/login"
+  className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+>
+  Sign In
+</Link>
+<Link
+  href="/signup"
+  className="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-all hover:shadow-violet-500/40 hover:brightness-110"
+>
+  Get Started Free
+</Link>
         </div>
 
         <button
@@ -93,13 +94,13 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#cta"
-              className="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 px-5 py-2.5 text-center text-sm font-semibold text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              Get Started Free
-            </a>
+            <Link
+  href="/signup"
+  className="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-600 px-5 py-2.5 text-center text-sm font-semibold text-white"
+  onClick={() => setMobileOpen(false)}
+>
+  Get Started Free
+</Link>
           </div>
         </motion.div>
       )}
