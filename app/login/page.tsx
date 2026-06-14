@@ -7,13 +7,12 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const { data: session } = useSession();
-  const router = useRouter();
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/login");
-    }
-  }, [status, router]);
+useEffect(() => {
+  if (session) {
+    router.push("/dashboard");
+  }
+}, [session, router]);
 
   if (status === "loading") 
   return (
