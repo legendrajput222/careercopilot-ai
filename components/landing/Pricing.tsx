@@ -38,14 +38,13 @@ const plans = [
       "Priority AI Processing",
       "Premium Resume Templates",
     ],
-    cta: "Coming Soon",
+    cta: "Join Waitlist",
     highlighted: true,
   },
 
   {
     name: "Premium",
-    price: "$19",
-    period: "/month",
+    price: "$29",
     description:
       "Advanced career growth toolkit for professionals and power users.",
     features: [
@@ -57,7 +56,7 @@ const plans = [
       "Early Access Features",
       "Priority Support",
     ],
-    cta: "Coming Soon",
+    cta: "Join Waitlist",
     highlighted: false,
   },
 ];
@@ -118,15 +117,23 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href={plan.name === "Free" ? "/signup" : "#"}
-                  className={`block rounded-xl py-3 text-center text-sm font-semibold transition-all ${
-                    plan.highlighted
-                      ? "bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/25 hover:brightness-110"
-                      : "border border-white/10 bg-white/5 text-white hover:bg-white/10"
-                  }`}
-                >
-                  {plan.cta}
-                </a>
+  href={plan.name === "Free" ? "/signup" : "#"}
+  onClick={(e) => {
+    if (plan.name !== "Free") {
+      e.preventDefault();
+      alert(
+        "🚀 Join Waitlist feature coming soon! You'll be able to join the waitlist shortly."
+      );
+    }
+  }}
+  className={`block rounded-xl py-3 text-center text-sm font-semibold transition-all ${
+    plan.highlighted
+      ? "bg-gradient-to-r from-violet-600 to-cyan-600 text-white shadow-lg shadow-violet-500/25 hover:brightness-110"
+      : "border border-white/10 bg-white/5 text-white hover:bg-white/10"
+  }`}
+>
+  {plan.cta}
+</a>
               </div>
             </StaggerItem>
           ))}
