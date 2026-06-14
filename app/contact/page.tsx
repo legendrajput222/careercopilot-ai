@@ -19,7 +19,7 @@ export default function ContactPage() {
               href="mailto:legendrana323@email.com"
               className="text-purple-400 font-semibold"
             >
-              your@email.com
+              legendrana323@email.com
             </a>
           </div>
         </div>
