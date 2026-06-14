@@ -10,11 +10,12 @@ export default function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (session) {
-      router.push("/dashboard");
+    if (status === "unauthenticated") {
+      router.push("/login");
     }
-  }, [session, router]);
+  }, [status, router]);
 
+  if (status === "loading") 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black px-6">
       <div className="w-full max-w-md bg-zinc-900 p-8 rounded-2xl border border-zinc-800 shadow-xl">
