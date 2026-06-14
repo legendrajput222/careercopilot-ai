@@ -16,32 +16,16 @@ export default function LoginPage() {
   }, [session, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="w-full max-w-md bg-zinc-900 p-8 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-purple-500/20">
+    <div className="min-h-screen flex items-center justify-center bg-black px-6">
+      <div className="w-full max-w-md bg-zinc-900 p-8 rounded-2xl border border-zinc-800 shadow-xl">
 
         <h1 className="text-3xl font-bold text-white text-center mb-2">
           Welcome Back
         </h1>
 
-        <p className="text-zinc-400 text-center mb-6">
+        <p className="text-zinc-400 text-center mb-8">
           Sign in to CareerCopilot AI
         </p>
-
-        <input
-          type="email"
-          placeholder="Email Address"
-          className="w-full p-3 mb-4 rounded-lg bg-zinc-800 text-white outline-none"
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 mb-4 rounded-lg bg-zinc-800 text-white outline-none"
-        />
-
-        <button className="w-full bg-purple-600 p-3 rounded-lg text-white font-semibold">
-          Sign In
-        </button>
 
         <button
           onClick={() =>
@@ -49,12 +33,12 @@ export default function LoginPage() {
               callbackUrl: "/dashboard",
             })
           }
-          className="w-full mt-3 border border-zinc-700 p-3 rounded-lg text-white"
+          className="w-full bg-white text-black font-semibold p-3 rounded-lg hover:bg-zinc-200 transition"
         >
           Continue with Google
         </button>
 
-        <div className="text-center mt-5">
+        <div className="text-center mt-6">
           <span className="text-zinc-400">
             Don&apos;t have an account?
           </span>

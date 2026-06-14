@@ -14,9 +14,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CareerCopilot AI — Your AI Career Copilot",
+  title: "CareerCopilot AI — AI Resume Builder & ATS Checker",
+
   description:
-    "Land your dream job faster with AI-powered resume building, cover letter generation, interview prep, career roadmaps, and ATS optimization.",
+    "Build professional resumes, optimize ATS scores, generate cover letters, prepare for interviews, and accelerate your career with AI.",
+
+  keywords: [
+    "AI Resume Builder",
+    "ATS Checker",
+    "Resume Analyzer",
+    "Cover Letter Generator",
+    "Career Roadmap",
+    "Interview Preparation",
+    "CareerCopilot AI",
+  ],
+
+  authors: [
+    {
+      name: "CareerCopilot AI",
+    },
+  ],
+
+  openGraph: {
+    title: "CareerCopilot AI",
+    description:
+      "Your AI-powered career assistant for resumes, ATS optimization, cover letters, and interview preparation.",
+
+    type: "website",
+
+    siteName: "CareerCopilot AI",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "CareerCopilot AI",
+    description:
+      "Build resumes, improve ATS scores and land jobs faster with AI.",
+  },
 };
 
 export default function RootLayout({

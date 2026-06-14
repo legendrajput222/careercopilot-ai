@@ -1,0 +1,13 @@
+export { default } from "next-auth/middleware";
+
+export const config = {
+  matcher: [
+    "/dashboard/:path*",
+    "/resume-builder/:path*",
+    "/ats-checker/:path*",
+    "/analyze-resume/:path*",
+    "/cover-letter/:path*",
+    "/career-roadmap/:path*",
+    "/interview-prep/:path*",
+  ],
+};
