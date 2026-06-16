@@ -14,17 +14,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  twitter: {
-    card: "summary_large_image",
-    title: "CareerCopilot AI",
-    description:
-      "Build resumes, improve ATS scores and land jobs faster with AI.",
-  },
-  
-  verification: {
-    google: "xOCycphVo5OLf9aCcQ3m9Mk_83ByXzMSCYM6tQi6y64",
-  },
-  };
   title: "CareerCopilot AI — AI Resume Builder & ATS Checker",
 
   description:
@@ -46,13 +35,15 @@ export const metadata: Metadata = {
     },
   ],
 
+  verification: {
+    google: "xOCycphVo5OLf9aCcQ3m9Mk_83ByXzMSCYM6tQi6y64",
+  },
+
   openGraph: {
     title: "CareerCopilot AI",
     description:
       "Your AI-powered career assistant for resumes, ATS optimization, cover letters, and interview preparation.",
-
     type: "website",
-
     siteName: "CareerCopilot AI",
   },
 
